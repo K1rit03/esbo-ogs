@@ -1,0 +1,104 @@
+/* Adiciona uma camada semi-transparente sobre o fundo do mar */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Começa totalmente transparente */
+    z-index: 0;
+    transition: background-color 0.5s ease; /* Transição suave para a mudança de opacidade */
+}
+
+/* CSS restante permanece igual */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui as bordas no cálculo do tamanho total */
+}
+
+body {
+    animation: moveBackground 30s linear infinite; /* Duração, timing-function, repetição */
+    font-family: "Roboto", sans-serif; /* Define a fonte padrão para todo o corpo do documento */
+    background-image: url('https://img.odcdn.com.br/wp-content/uploads/2023/12/Fundo-do-mar-1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Usa flexbox para alinhar os elementos na vertical */
+    flex-direction: column; /* Alinha os elementos na vertical */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da tela */
+}
+
+nav {
+    position: relative; /* Fixa a barra de navegação no topo da página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Garante que a barra de navegação esteja acima dos outros elementos */
+}
+
+nav ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%; /* Adiciona bordas arredondadas para criar uma aparência de bolha */
+    animation: bubbleHover 3s ease-in-out infinite; /* Adiciona a animação de flutuação */
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Adiciona uma cor de fundo ao passar o mouse */
+}
+
+main {
+    padding-top: 70px; /* Adiciona margem superior ao conteúdo para compensar a barra de navegação */
+    flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço restante na vertical */
+    display: flex; /* Usa flexbox para alinhar os elementos na vertical */
+    justify-content: space-between; /* Distribui os itens horizontalmente com espaçamento uniforme */
+    align-items: flex-start; /* Alinha os itens no topo */
+    padding: 0 20px; /* Adiciona espaçamento horizontal */
+}
+
+h1 {
+    color: darkblue;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.texto-inicial {
+    max-width: 500px;
+    margin-right: auto; /* Empurra o texto para a esquerda */
+    margin-top: 50px; /* Adiciona espaço entre o texto e a barra de navegação */
+}
+
+.solucao-inicial {
+    max-width: 500px;
+    margin-top: 500px; /* Adiciona espaço entre os textos */
+    align-self: flex-end; /* Alinha o segundo texto à direita */
+    margin-right: 20px; /* Adiciona espaço entre o segundo texto e a margem direita */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+    width: 100%;
+    height: 34px;
+}
